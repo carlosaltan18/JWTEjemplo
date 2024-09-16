@@ -39,21 +39,4 @@ public class AuthController {
         return ResponseEntity.ok(loginResponse);
     }
 
-    /*
-    @Autowired
-    private AuthenticationService authenticationService;
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestParam String email, @RequestParam String password) {
-        String token = authenticationService.authenticateAndGenerateToken(email, password);
-        return ResponseEntity.ok().body(token);
-    }*/
-    /*@PostMapping("/login")
-    public ResponseEntity<AuthRespone> login(@RequestParam LoginRequest request) {
-        return ResponseEntity.ok(authService.login(request));
-    }*/
-
-    @PostMapping("/register")
-    public String register(){
-        return "Regitrado";
-    }
 }

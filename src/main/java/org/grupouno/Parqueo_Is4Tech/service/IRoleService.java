@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface IRoleService {
 
-     List<String> getRolesByProfileId(Long profileId);
+     List<String> findRolesByProfileId(Long profileId);
 }
