@@ -1,8 +1,6 @@
 package org.grupouno.Parqueo_Is4Tech.model;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -11,7 +9,8 @@ import java.util.List;
 
 
 @Entity
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @Table(name = "\"user\"")
@@ -31,9 +30,14 @@ public class User implements UserDetails {
     @JoinColumn(name = "profile_id", referencedColumnName = "profile_id")
     private Profile idPorfile;
 
+    @Transient
+    private Collection<? extends GrantedAuthority> authorities;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        return authorities != null ? authorities : List.of();
+    }
+    public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
+        this.authorities = authorities;
     }
 
     public String getPassword() {
