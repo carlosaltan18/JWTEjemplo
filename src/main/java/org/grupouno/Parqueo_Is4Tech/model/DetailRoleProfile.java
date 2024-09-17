@@ -9,13 +9,13 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-@Table(name = "detailRoleProfile")
+@Table(name = "detail_role_profile")
 @IdClass(DetailDTO.class)
 public class DetailRoleProfile {
     @Id
-    @Column(name = "id_profile")
+    @Column(name = "profile_id")
     private long idProfile;
     @Id
-    @Column(name = "id_role")
+    @Column(name = "role_id")
     private long idRole;
 }

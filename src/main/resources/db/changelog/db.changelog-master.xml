@@ -151,15 +151,15 @@
 
     <changeSet id='insert-roles' author="grupo1">
         <insert tableName="role">
-            <column name="role" value="role_admin"/>
+            <column name="role" value="ROLE_ADMIN"/>
             <column name="description" value="acceso completo a todas las funciones y configuraciones"/>
         </insert>
         <insert tableName="role">
-            <column name="role" value="role_user"/>
+            <column name="role" value="ROLE_USER"/>
             <column name="description" value="tiene acceso a la visualización, creación y edición de su propio contenido"/>
         </insert>
         <insert tableName="role">
-            <column name="role" value="role_audit"/>
+            <column name="role" value="ROLE_AUDITH"/>
             <column name="description" value="puede revisar y monitorizar las actividades realizadas dentro del sistema"/>
         </insert>
     </changeSet>
@@ -197,6 +197,10 @@
             <column name="profile_id" value="1"/>
             <column name="role_id" value="3"/>
         </insert>
+    </changeSet>
+
+    <changeSet id="rename-table-detailRolProfile" author="grupo1">
+        <renameTable oldTableName="detailRolProfile" newTableName="detail_role_profile"/>
     </changeSet>
 
 </databaseChangeLog>

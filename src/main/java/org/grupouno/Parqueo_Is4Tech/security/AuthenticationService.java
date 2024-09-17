@@ -66,7 +66,7 @@ public class AuthenticationService {
             Long profileId = profile.getProfileId();
             authorities = roleService.getRolesByProfileId(profileId);
         } else {
-            authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"));
+            authorities = Collections.singletonList(new SimpleGrantedAuthority("role_user"));
         }
         user.setAuthorities(authorities);
         UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class DemoControlleer {
 
-    @PreAuthorize("hasRole('ROLE_USER')") // Asegúrate de usar el rol correcto aquí
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PostMapping("/demo")
     public String demo() {
         System.out.println("Prueba");
