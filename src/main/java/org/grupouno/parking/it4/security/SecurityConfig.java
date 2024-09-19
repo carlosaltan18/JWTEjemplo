@@ -19,11 +19,7 @@ import java.util.List;
 
 @EnableWebSecurity
 @Configuration
-@EnableGlobalMethodSecurity(
-        securedEnabled = true,
-        jsr250Enabled = true,
-        prePostEnabled = true
-)
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 
 public class SecurityConfig {
     private final AuthenticationProvider authenticationProvider;
@@ -44,7 +40,6 @@ public class SecurityConfig {
                         .requestMatchers("/v3/**").permitAll()
                         .requestMatchers("/swagger-ui/**").permitAll()
                         .requestMatchers("/swagger-resources/**").permitAll()
-                        .requestMatchers("/prueba/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

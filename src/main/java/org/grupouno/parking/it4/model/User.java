@@ -71,4 +71,22 @@
         public boolean isEnabled() {
             return true;
         }
+
+        public Long getUserId() {
+            return userId;
+        }
+
+        @Override
+        public String toString() {
+            return "User{" +
+                    "userId=" + userId +
+                    ", name='" + name + '\'' +
+                    ", surname='" + surname + '\'' +
+                    ", age=" + age +
+                    ", dpi='" + dpi + '\'' +
+                    ", email='" + email + '\'' +
+                    ", status=" + status +
+                    ", idProfile=" + (idProfile != null ? idProfile.getProfileId() : "null") +
+                    '}';
+        }
     }

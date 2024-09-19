@@ -170,6 +170,12 @@
             <column name="status" value="true"/>
         </insert>
     </changeSet>
+    <changeSet id="insert-profile2" author="grupo1">
+        <insert tableName="profile">
+            <column name="description" value="USER"/>
+            <column name="status" value="true"/>
+        </insert>
+    </changeSet>
 
     <changeSet id="insert-user" author="grupo1">
         <insert tableName="user">
@@ -196,6 +202,12 @@
         <insert tableName="detailRolProfile">
             <column name="profile_id" value="1"/>
             <column name="role_id" value="3"/>
+        </insert>
+    </changeSet>
+    <changeSet id="insert-detailRolProfile2" author="grupo1">
+        <insert tableName="detailRolProfile">
+            <column name="profile_id" value="2"/>
+            <column name="role_id" value="2"/>
         </insert>
     </changeSet>
 
